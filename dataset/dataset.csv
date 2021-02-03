@@ -1,0 +1,241 @@
+commands;label
+Batti bujha dae;light off
+balab bujha dae;light off
+balab band kar dae;light off
+light band kr do;light off
+light bujha do;light off
+light off kar de;light off
+make it dark;light off
+Turn off the light;light off
+Switch off the light;light off
+Batti bujhaw tae;light off
+bulb bujhaiye;light off
+balab jala dae;light on
+batti jala dae;light on
+light jala do;light on
+light on kar do;light on
+light on ho ja;light on
+bulb jala do;light on
+light chalu kar do;light on
+balab chalu kara ho;light on
+batti jalaw tae;light on
+batti jalaiye;light on
+bulb jalaiye;light on
+paani garam kare wala machiniya chalu kar dae;geyser on
+paani garam kare wala machiniya start kar dae;geyser on
+Turn on the geyser;geyser on
+Switch on the geyser;geyser on
+Geyser on;geyser on
+Please turn on the geyser;geyser on
+Paani garam karne wala machine chala do;geyser on
+Paani garam karne wala machine on do;geyser on
+Paani garam karne wala machine shuru kar do;geyser on
+Paani garam karne wala machine start kar do;geyser on
+machine chalu kar do paani garam karne wala;geyser on
+paani garam kare wala machiniya band kar dae;geyser off
+paani garam kare wala machiniya off kar dae;geyser off
+Turn off the geyser;geyser off
+Switch off the geyser;geyser off
+Geyser off;geyser off
+Please turn off the geyser;geyser off
+Paani garam karne wala machine band kar do;geyser off
+Paani garam karne wala machine off kar do;geyser off
+machine band kar do paani garam karne wala;geyser off
+tani gyser start kara da;geyser on
+tanki gyser strt kar de;geyser on
+tani gyser start kar da;geyser on
+tanki gyser strt kr de;geyser on
+tanika gyser strt kr de;geyser on
+paani garam kare wala machiniya bnd kar dae;geyser off
+paani garam kare wala masiniya band kar dae;geyser off
+paani garam kare wala mashniya bnd kar dae;geyser off
+paani garam kare wala machiniya bnd kar dae;geyser off
+pani garm kre wala machine bnd ke de;geyser off
+pani garm kare wala machine bnd ho;geyser off
+geyser band;geyser off
+gyser bnd de;geyser off
+geyser bnd kr;geyser off
+gyser bnd kr;geyser off
+gyser bnd ;geyser off
+tani gyser band kara da;geyser off
+tanki gyser bnd kar de;geyser off
+tani gyser bnd kar da;geyser off
+tanki gyser bnd kr de;geyser off
+tanika gyser bnd kr de;geyser off
+tani gyser band kara dahi;geyser off
+tani gyser band kara dhi;geyser off
+blb jala dae;light on
+blb jla dae;light on
+light jla de;light on
+light jala dijie;light on
+lights on;light on
+switch on the light;light on
+switch on light;light on
+btti jla do;light on
+btti jla dijie;light on
+btti bujha de;light off
+btti bujha dae;light off
+blb band kr de;light off
+balb bnd kr dae;light off
+light bnd;light off
+mk it drk;light off
+switch off d light;light off
+mk it dark;light off
+dark kro;light off
+drk krdo;light off
+balb band;light off
+blb bnd;light off
+lights off;light off
+lights band;light off
+start lights;light on
+lights start;light on
+strt light;light on
+paani garam kro;geyser on
+heat bath water;geyser on
+Turn on d geyser;geyser on
+Plz turn on d geyser;geyser on
+Plzz trn on the geyser;geyser on
+start geyser;geyser on
+strt gyser;geyser on
+plz trn on the fan;fan on
+fan on kr do;fan on
+fan ko on kr do bhai;fan on
+kripya krke fan chalu kr dijie;fan on
+on fan;fan on
+fan chalu kr dijie;fan on
+fan shuru kr dijie;fan on
+turn on the fan;fan on
+fan on;fan on
+pankha chalu kr dijie;fan on
+pnkha on kr de;fan on
+pankha shuru kro;fan on
+pankha shuru;fan on
+plz trn off the fan;fan off
+fan off kr do;fan off
+please fan ko off kar do;fan off
+fan band kr dijie;fan off
+pankha band kr dijie;fan off
+pankha band;fan off
+pankha band ho ja;fan off
+fan off;fan off
+off fan;fan off
+please off the fan;fan off
+fan off kr dijie;fan off
+fan bnd kro;fan off
+pankha bnd kro;fan off
+pnkha off kro;fan off
+off kro pankhe ko;fan off
+band kro pnkhe ko;fan off
+pnkha bnd;fan off
+pankha band ho jae;fan off
+plz trn on the tv;tv on
+tv on kr do;tv on
+television ko on kr do bhai;tv on
+kripya krke tv chalu kr dijie;tv on
+on television;tv on
+tv chalu kr dijie;tv on
+television shuru kr dijie;tv on
+turn on the tv;tv on
+Tv on;tv on
+televijon chalu kr dijie;tv on
+tlvjn on kr de;tv on
+tlbjn shuru kro;tv on
+tlbjn shuru;tv on
+plz trn off the tv;tv off
+tv off kr do;tv off
+please television ko off kar do;tv off
+tv band kr dijie;tv off
+tlbjn band kr dijie;tv off
+tlvzn band;tv off
+tlbjn band ho ja;tv off
+television off;tv off
+off televizion;tv off
+please off the tv;tv off
+tlvsn off kr dijie;tv off
+tlbsn bnd kro;tv off
+television bnd kro;tv off
+tv off kro;tv off
+off kro telvsn ko;tv off
+band kro televsn ko;tv off
+telvsn bnd;tv off
+telvsn band ho jae;tv off
+plz trn on the ac;ac on
+aircon on kr do;ac on
+ac ko on kr do bhai;ac on
+kripya krke aircon chalu kr dijie;ac on
+on vatanukulak;ac on
+vaatanukulak chalu kr dijie;ac on
+vtnukulak shuru kr dijie;ac on
+turn on the ac;ac on
+air cnditnr on;ac on
+air con chalu kr dijie;ac on
+air conditioner on kr de;ac on
+ac shuru kro;ac on
+vtnukulk shuru;ac on
+plz trn off the ac;ac off
+ac off kr do;ac off
+please air conditioner ko off kar do;ac off
+vtnukulk band kr dijie;ac off
+vatanukulak band kr dijie;ac off
+Air con band;ac off
+Air conditioner band ho ja;ac off
+ac off;ac off
+off aircon;ac off
+please off the ac;ac off
+Air con off kr dijie;ac off
+air cnditnr bnd kro;ac off
+air cnditnr bnd kro;ac off
+ac off kro;ac off
+off kro air cndtnr ko;ac off
+band kro air conditioner ko;ac off
+aircon bnd;ac off
+ac band ho jae;ac off
+fanwa off kara ho;fan off
+fanwa band kara ho;fan off
+favwa band kar dae;fan off
+fanwa band kar;fan off
+pankha off kara ho;fan off
+pankhawa band kar dae;fan off
+fanwa on kara ho;fan on
+fanwa chalava ho;fan on
+fanwa chala dae;fan on
+fanwa chalu kara ho;fan on
+pankha chalu kar dae;fan on
+pankha on kara ho;fan on
+pankhawa chalu kar dae;fan on
+fan chalao;fan on
+pankhawa chalao;fan on
+tv on kara ho;tv on
+tv chalawa ho;tv on
+tiviya chala dae;tv on
+tiviya chalu kar dae;tv on
+tiviya on kara ho;tv on
+tiviya chalu kar dae;tv on
+tv chalao;tv on
+tiviya chalao;tv on
+tv off kara ho;tv off
+tv band kara ho;tv off
+tiviya band dae;tv off
+tiviya band kar dae;tv off
+tiviya off kara ho;tv off
+tiviya off kar dae;tv off
+tv band kar;tv off
+tiviya band kar;tv off
+ac on kara ho;ac on
+ac chalawa ho;ac on
+ac chala dae;ac on
+ac on kara ho;ac on
+ac chalu kar dae;ac on
+ac chalao;ac on
+aciya on kar;ac on
+aciya chalao;ac on
+aciya chalu kar;ac on
+ac off kara ho;ac off
+ac band ho;ac off
+ac band kar dae;ac off
+ac off kara ho;ac off
+ac off kar dae;ac off
+ac band karo;ac off
+aciya off kar;ac off
+aciya band;ac off
+aciya band kar;ac off
