@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/arjun/miniconda3/envs/dev/bin/python"
+    "python.pythonPath": "/home/arjun/miniconda3/envs/dev/bin/python",
+    "jupyter.jupyterServerType": "local"
 }
