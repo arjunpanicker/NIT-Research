@@ -9,7 +9,7 @@ class Model:
     
     @staticmethod
     def createFasttextModel(filename: str):
-        path: str = os.path.join(CONFIG.PWD, CONFIG.OUTPUT_DIRECTORY_NAME)
+        path: str = os.path.join("../", CONFIG.OUTPUT_DIRECTORY_NAME)
         ft_model = fasttext.train_supervised(os.path.join(path, filename), \
                                     dim=CONFIG.FT_DIMS, lr=0.5, epoch=40, verbose=1)
         ft_model.save_model(os.path.join(path, 'ft_model.ftz'))

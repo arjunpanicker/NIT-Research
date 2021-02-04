@@ -5,7 +5,7 @@ import os
 
 from .config import *
 
-class Utility:
+class Preprocessing:
     '''Defining a Utility class with some utility functions
     '''
     stop_words: list = []
@@ -13,8 +13,8 @@ class Utility:
 
 
     def __init__(self, stop_words, sms_translations_data) -> None:
-        stop_words = stop_words
-        sms_translations_data = sms_translations_data
+        self.stop_words = stop_words
+        self.sms_translations_data = sms_translations_data
         pass
 
     def _removeStopWords(self, line: str)-> str:
@@ -46,29 +46,29 @@ class Utility:
         dataset['label'] = dataset['label'].apply(lambda x: re.sub(' ', '_', x))
 
         # Remove stopwords
-        dataset['commands'] = dataset['commands'].apply(Utility._removeStopWords)
+        dataset['commands'] = dataset['commands'].apply(self._removeStopWords)
 
         # Perform sms translation
-        dataset['commands'] = dataset['commands'].apply(Utility._smsTranslate)
+        dataset['commands'] = dataset['commands'].apply(self._smsTranslate)
 
         # Perform language translation
-        # dataset['commands'] = dataset['commands'].apply(Utility.langTranslate)
+        # dataset['commands'] = dataset['commands'].apply(self.langTranslate)
         return dataset
 
     def strpreprocessing(self, command: str)-> str:
         command = command.lower()
-        command = Utility._removeStopWords(command)
-        command = Utility._smsTranslate(command)
+        command = self._removeStopWords(command)
+        command = self._smsTranslate(command)
 
         return command
 
     def saveToCsv(self, dataset: pd.DataFrame)-> None:
-        dataset.to_csv(os.path.join(CONFIG.PWD, CONFIG.OUTPUT_DIRECTORY_NAME, \
+        dataset.to_csv(os.path.join('../', CONFIG.OUTPUT_DIRECTORY_NAME, \
                                     CONFIG.OUTPUT_DATASET_FILE), header=False, \
                         index=False, sep=' ')
 
-    def convertCommandToVector(dataset: pd.DataFrame, ftModel)-> pd.DataFrame:
+    def convertCommandToVector(self, dataset: pd.DataFrame, ftModel)-> pd.DataFrame:
         dataset['sent_vec'] = dataset['commands'].apply( \
-            lambda x: Utility._convertSentToVec(x, ftModel))
+            lambda x: self._convertSentToVec(x, ftModel))
 
         return dataset

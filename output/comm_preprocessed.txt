@@ -1,0 +1,240 @@
+batti bujha __label__light_off
+balab bujha __label__light_off
+balab band __label__light_off
+light band __label__light_off
+light bujha __label__light_off
+light off __label__light_off
+dark __label__light_off
+off light __label__light_off
+off light __label__light_off
+batti bujhaw __label__light_off
+bulb bujhaiye __label__light_off
+balab jala __label__light_on
+batti jala __label__light_on
+light jala __label__light_on
+light on __label__light_on
+light on __label__light_on
+bulb jala __label__light_on
+light chalu __label__light_on
+balab chalu __label__light_on
+batti jalaw __label__light_on
+batti jalaiye __label__light_on
+bulb jalaiye __label__light_on
+paani garam machiniya chalu __label__geyser_on
+paani garam machiniya start __label__geyser_on
+on geyser __label__geyser_on
+on geyser __label__geyser_on
+geyser on __label__geyser_on
+on geyser __label__geyser_on
+paani garam machine chala __label__geyser_on
+paani garam machine on __label__geyser_on
+paani garam machine shuru __label__geyser_on
+paani garam machine start __label__geyser_on
+machine chalu paani garam __label__geyser_on
+paani garam machiniya band __label__geyser_off
+paani garam machiniya off __label__geyser_off
+off geyser __label__geyser_off
+off geyser __label__geyser_off
+geyser off __label__geyser_off
+off geyser __label__geyser_off
+paani garam machine band __label__geyser_off
+paani garam machine off __label__geyser_off
+machine band paani garam __label__geyser_off
+tani gyser start __label__geyser_on
+tanki gyser strt __label__geyser_on
+tani gyser start __label__geyser_on
+tanki gyser strt __label__geyser_on
+tanika gyser strt __label__geyser_on
+paani garam machiniya bnd __label__geyser_off
+paani garam masiniya band __label__geyser_off
+paani garam mashniya bnd __label__geyser_off
+paani garam machiniya bnd __label__geyser_off
+pani garm kre machine bnd ke __label__geyser_off
+pani garm machine bnd __label__geyser_off
+geyser band __label__geyser_off
+gyser bnd __label__geyser_off
+geyser bnd __label__geyser_off
+gyser bnd __label__geyser_off
+gyser bnd __label__geyser_off
+tani gyser band __label__geyser_off
+tanki gyser bnd __label__geyser_off
+tani gyser bnd __label__geyser_off
+tanki gyser bnd __label__geyser_off
+tanika gyser bnd __label__geyser_off
+tani gyser band dahi __label__geyser_off
+tani gyser band dhi __label__geyser_off
+blb jala __label__light_on
+blb jla __label__light_on
+light jla __label__light_on
+light jala dijie __label__light_on
+lights on __label__light_on
+on light __label__light_on
+on light __label__light_on
+btti jla __label__light_on
+btti jla dijie __label__light_on
+btti bujha __label__light_off
+btti bujha __label__light_off
+blb band __label__light_off
+balb bnd __label__light_off
+light bnd __label__light_off
+mk drk __label__light_off
+off d light __label__light_off
+mk dark __label__light_off
+dark kro __label__light_off
+drk krdo __label__light_off
+balb band __label__light_off
+blb bnd __label__light_off
+lights off __label__light_off
+lights band __label__light_off
+start lights __label__light_on
+lights start __label__light_on
+strt light __label__light_on
+paani garam kro __label__geyser_on
+heat bath water __label__geyser_on
+on d geyser __label__geyser_on
+plz on d geyser __label__geyser_on
+plzz trn on geyser __label__geyser_on
+start geyser __label__geyser_on
+strt gyser __label__geyser_on
+plz trn on fan __label__fan_on
+fan on __label__fan_on
+fan ko on bhai __label__fan_on
+kripya krke fan chalu dijie __label__fan_on
+on fan __label__fan_on
+fan chalu dijie __label__fan_on
+fan shuru dijie __label__fan_on
+on fan __label__fan_on
+fan on __label__fan_on
+pankha chalu dijie __label__fan_on
+pnkha on __label__fan_on
+pankha shuru kro __label__fan_on
+pankha shuru __label__fan_on
+plz trn off fan __label__fan_off
+fan off __label__fan_off
+fan ko off __label__fan_off
+fan band dijie __label__fan_off
+pankha band dijie __label__fan_off
+pankha band __label__fan_off
+pankha band __label__fan_off
+fan off __label__fan_off
+off fan __label__fan_off
+off fan __label__fan_off
+fan off dijie __label__fan_off
+fan bnd kro __label__fan_off
+pankha bnd kro __label__fan_off
+pnkha off kro __label__fan_off
+off kro pankhe ko __label__fan_off
+band kro pnkhe ko __label__fan_off
+pnkha bnd __label__fan_off
+pankha band jae __label__fan_off
+plz trn on tv __label__tv_on
+tv on __label__tv_on
+television ko on bhai __label__tv_on
+kripya krke tv chalu dijie __label__tv_on
+on television __label__tv_on
+tv chalu dijie __label__tv_on
+television shuru dijie __label__tv_on
+on tv __label__tv_on
+tv on __label__tv_on
+televijon chalu dijie __label__tv_on
+tlvjn on __label__tv_on
+tlbjn shuru kro __label__tv_on
+tlbjn shuru __label__tv_on
+plz trn off tv __label__tv_off
+tv off __label__tv_off
+television ko off __label__tv_off
+tv band dijie __label__tv_off
+tlbjn band dijie __label__tv_off
+tlvzn band __label__tv_off
+tlbjn band __label__tv_off
+television off __label__tv_off
+off televizion __label__tv_off
+off tv __label__tv_off
+tlvsn off dijie __label__tv_off
+tlbsn bnd kro __label__tv_off
+television bnd kro __label__tv_off
+tv off kro __label__tv_off
+off kro telvsn ko __label__tv_off
+band kro televsn ko __label__tv_off
+telvsn bnd __label__tv_off
+telvsn band jae __label__tv_off
+plz trn on ac __label__ac_on
+aircon on __label__ac_on
+ac ko on bhai __label__ac_on
+kripya krke aircon chalu dijie __label__ac_on
+on vatanukulak __label__ac_on
+vaatanukulak chalu dijie __label__ac_on
+vtnukulak shuru dijie __label__ac_on
+on ac __label__ac_on
+air cnditnr on __label__ac_on
+air con chalu dijie __label__ac_on
+air conditioner on __label__ac_on
+ac shuru kro __label__ac_on
+vtnukulk shuru __label__ac_on
+plz trn off ac __label__ac_off
+ac off __label__ac_off
+air conditioner ko off __label__ac_off
+vtnukulk band dijie __label__ac_off
+vatanukulak band dijie __label__ac_off
+air con band __label__ac_off
+air conditioner band __label__ac_off
+ac off __label__ac_off
+off aircon __label__ac_off
+off ac __label__ac_off
+air con off dijie __label__ac_off
+air cnditnr bnd kro __label__ac_off
+air cnditnr bnd kro __label__ac_off
+ac off kro __label__ac_off
+off kro air cndtnr ko __label__ac_off
+band kro air conditioner ko __label__ac_off
+aircon bnd __label__ac_off
+ac band jae __label__ac_off
+fanwa off __label__fan_off
+fanwa band __label__fan_off
+favwa band __label__fan_off
+fanwa band __label__fan_off
+pankha off __label__fan_off
+pankhawa band __label__fan_off
+fanwa on __label__fan_on
+fanwa chalava __label__fan_on
+fanwa chala __label__fan_on
+fanwa chalu __label__fan_on
+pankha chalu __label__fan_on
+pankha on __label__fan_on
+pankhawa chalu __label__fan_on
+fan chalao __label__fan_on
+pankhawa chalao __label__fan_on
+tv on __label__tv_on
+tv chalawa __label__tv_on
+tiviya chala __label__tv_on
+tiviya chalu __label__tv_on
+tiviya on __label__tv_on
+tiviya chalu __label__tv_on
+tv chalao __label__tv_on
+tiviya chalao __label__tv_on
+tv off __label__tv_off
+tv band __label__tv_off
+tiviya band __label__tv_off
+tiviya band __label__tv_off
+tiviya off __label__tv_off
+tiviya off __label__tv_off
+tv band __label__tv_off
+tiviya band __label__tv_off
+ac on __label__ac_on
+ac chalawa __label__ac_on
+ac chala __label__ac_on
+ac on __label__ac_on
+ac chalu __label__ac_on
+ac chalao __label__ac_on
+aciya on __label__ac_on
+aciya chalao __label__ac_on
+aciya chalu __label__ac_on
+ac off __label__ac_off
+ac band __label__ac_off
+ac band __label__ac_off
+ac off __label__ac_off
+ac off __label__ac_off
+ac band karo __label__ac_off
+aciya off __label__ac_off
+aciya band __label__ac_off
+aciya band __label__ac_off
