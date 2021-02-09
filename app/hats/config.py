@@ -21,6 +21,6 @@ class CONFIG:
     FT_DIMS = 150
 
     ## File Manager Constants
-    OUTPUT_DIRECTORY_NAME = '/output/'
-    PLOT_DIRECTORY_NAME = '/plots/'
-    DATASET_DIRECTORY = '/dataset/'
+    OUTPUT_DIRECTORY_NAME = 'output/'
+    PLOT_DIRECTORY_NAME = 'plots/'
+    DATASET_DIRECTORY = 'dataset/'

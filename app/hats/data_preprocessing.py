@@ -63,7 +63,7 @@ class Preprocessing:
         return command
 
     def saveToCsv(self, dataset: pd.DataFrame)-> None:
-        dataset.to_csv(os.path.join('..', CONFIG.OUTPUT_DIRECTORY_NAME, \
+        dataset.to_csv(os.path.join('../', CONFIG.OUTPUT_DIRECTORY_NAME, \
                                     CONFIG.OUTPUT_DATASET_FILE), header=False, \
                         index=False, sep=' ')
 
