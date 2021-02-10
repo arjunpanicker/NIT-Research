@@ -2,10 +2,16 @@ import fasttext
 import os
 import numpy as np
 import pickle
+from tqdm import tqdm
 
 # Tensorflow
 import tensorflow as tf
 from tensorflow import keras
+
+# Scikit-learn
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 
 from .config import *
 from . import utility as ut
@@ -53,4 +59,40 @@ def createPerceptronModels(model_names: list):
 def train(X_train, y_train):
     '''Creates and trains the models with the data passed as arguments
     '''
-    pass
+    classifierList = [
+        {
+            'model_name': SVC.__name__,
+            'model': SVC(probability=True, random_state=40),
+            'parameters': dict(C = [10e-5, 10e-4, 10e-3, 10e-2, 10e-1, 1, 10e1, 10e2, 10e4], 
+                kernel=['linear', 'rbf', 'poly']),
+            'filename': '../' + CONFIG.OUTPUT_DIRECTORY_NAME + CONFIG.SVM_MODEL_SAVEFILE
+        },
+        {   
+            'model_name': LogisticRegression.__name__,
+            'model': LogisticRegression(random_state=40),
+            'parameters': dict(C = [10e-5, 10e-4, 10e-3, 10e-2, 10e-1, 1, 10e1, 10e2, 10e4],
+                multi_class = ['ovr', 'multinomial'],
+                solver=['liblinear', 'newton-cg', 'sag', 'saga', 'libfgs']),
+            'filename': '../' + CONFIG.OUTPUT_DIRECTORY_NAME + CONFIG.SVM_MODEL_SAVEFILE
+        }
+    ]
+
+    classifiers = {}
+
+    for clfDetail in tqdm(classifierList):
+        clf = GridSearchCV(estimator=clfDetail['model'], param_grid=clfDetail['parameters'])
+        clf.fit(X_train, y_train)
+        
+        # Save the classifier
+        pickle.dump(clf, open(clfDetail['filename'], 'wb'))
+        classifiers[clfDetail['model_name']] = {
+            'model': clf,
+            'best_estimators': clf.best_estimator_,
+            'filename': clfDetail['filename']
+        }
+
+        print(f"\nModel: {clfDetail['model_name']}, Train Accuracy: {clf.score(X_train, y_train)}")
+
+    return classifiers
+
+
