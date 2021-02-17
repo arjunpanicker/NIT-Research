@@ -61,9 +61,9 @@ def data_split_classwise(dataset: pd.DataFrame):
         yield np.asarray(X_train), np.asarray(X_test), \
             np.asarray(y_train), np.asarray(y_test), label
 
-def data_split(dataset: pd.DataFrame):
+def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
     X, y = dataset['sent_vec'], dataset['label']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, \
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, \
                 random_state=40, stratify=y)
     X_train, X_test = np.stack(X_train), np.stack(X_test)
     return X_train, X_test, y_train, y_test

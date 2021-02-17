@@ -13,6 +13,7 @@ class CONFIG:
     OUTPUT_DATASET_FILE = 'comm_preprocessed.txt'
     SVM_MODEL_SAVEFILE = 'svm_model.h'
     LR_MODEL_SAVEFILE = 'lr_model.h'
+    KNN_MODEL_SAVEFILE = 'knn_model.h'
 
     ## Feature Names
     INPUT_FEATURE = 'sentence_embedding'

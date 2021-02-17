@@ -9,9 +9,10 @@ import tensorflow as tf
 from tensorflow import keras
 
 # Scikit-learn
-from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 
 from .config import *
 from . import utility as ut
@@ -73,7 +74,15 @@ def train(X_train, y_train):
             'parameters': dict(C = [10e-5, 10e-4, 10e-3, 10e-2, 10e-1, 1, 10e1, 10e2, 10e4],
                 multi_class = ['ovr', 'multinomial'],
                 solver=['liblinear', 'newton-cg', 'sag', 'saga', 'libfgs']),
-            'filename': '../' + CONFIG.OUTPUT_DIRECTORY_NAME + CONFIG.SVM_MODEL_SAVEFILE
+            'filename': '../' + CONFIG.OUTPUT_DIRECTORY_NAME + CONFIG.LR_MODEL_SAVEFILE
+        },
+        {   
+            'model_name': KNeighborsClassifier.__name__,
+            'model': KNeighborsClassifier(),
+            'parameters': dict(n_neighbors = range(4, 9), # 9 is exclusive
+                weights = ['uniform', 'distance'],
+                algorithm=['ball_tree', 'kd_tree']),
+            'filename': '../' + CONFIG.OUTPUT_DIRECTORY_NAME + CONFIG.KNN_MODEL_SAVEFILE
         }
     ]
 
@@ -88,11 +97,24 @@ def train(X_train, y_train):
         classifiers[clfDetail['model_name']] = {
             'model': clf,
             'best_estimators': clf.best_estimator_,
-            'filename': clfDetail['filename']
+            'filename': clfDetail['filename'],
+            'train_accuracy': clf.score(X_train, y_train)
         }
 
         print(f"\nModel: {clfDetail['model_name']}, Train Accuracy: {clf.score(X_train, y_train)}")
 
     return classifiers
 
+def test(classifiers: dict, X_test, y_test):
+    test_results = {}
+    for clf_name in classifiers.keys():
+        clf = pickle.load(open(classifiers[clf_name]['filename'], 'rb'))
+        test_accuracy = clf.score(X_test, y_test)
 
+        test_results[clf_name] = {
+            'test_accuracy': test_accuracy
+        }
+
+        print(f"\nModel: {clf_name}, Test Accuracy: {test_accuracy}")
+    
+    return test_results
