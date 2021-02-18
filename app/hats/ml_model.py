@@ -3,13 +3,14 @@ import os
 import numpy as np
 import pickle
 from tqdm import tqdm
+from scipy.stats import sem
 
 # Tensorflow
 import tensorflow as tf
 from tensorflow import keras
 
 # Scikit-learn
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV, RepeatedStratifiedKFold, cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
@@ -20,7 +21,7 @@ from . import utility as ut
 def createFasttextModel(filename: str):
     path: str = os.path.join("../", CONFIG.OUTPUT_DIRECTORY_NAME)
     ft_model = fasttext.train_supervised(os.path.join(path, filename), \
-                                dim=CONFIG.FT_DIMS, lr=0.5, epoch=40, verbose=1)
+                                dim=CONFIG.FT_DIMS, lr=0.5, epoch=10, verbose=1)
     ft_model.save_model(os.path.join(path, 'ft_model.ftz'))
     return ft_model
 
@@ -29,20 +30,19 @@ def modelPredict(command: str) -> str:
     pass
 
 def predict(command: str, ft_model, filename: str) -> str:
-    devicePresent: bool = ut.device_exists(command, ft_model)
+    # devicePresent: bool = ut.device_exists(command, ft_model)
 
-    if devicePresent:
-        if filename:
-            loaded_model = pickle.load(open(filename, 'rb'))
-            command_vec = np.reshape(ft_model.get_sentence_vector(command), (1, -1))
-            result_proba = np.max(loaded_model.predict_proba(command_vec)[0])
-
-            if result_proba > CONFIG.THRESHOLD:
-                return loaded_model.classes_[np.argmax(loaded_model.predict_proba(command_vec)[0])]
-            else:
-                return 'Other'
-    else:
-        return 'Other'
+    # if devicePresent:
+    if filename:
+        loaded_model = pickle.load(open(filename, 'rb'))
+        command_vec = np.reshape(ft_model.get_sentence_vector(command), (1, -1))
+        result_proba = np.max(loaded_model.predict_proba(command_vec)[0])
+        if result_proba > CONFIG.THRESHOLD:
+            return loaded_model.classes_[np.argmax(loaded_model.predict_proba(command_vec)[0])]
+        else:
+            return 'Other'
+    # else:
+    #     return 'Other'
 
 def createPerceptronModels(model_names: list):
     ''' Create a perceptron for the number of models (model names) passed as arguments
@@ -118,3 +118,26 @@ def test(classifiers: dict, X_test, y_test):
         print(f"\nModel: {clf_name}, Test Accuracy: {test_accuracy}")
     
     return test_results
+
+def cross_validate(classifiers: dict, X_train, X_test, y_train, y_test):
+    '''Performs Cross Validation using the classifiers passed to this function
+    and prints the performance of each classifier in terms of - 
+    mean Accuracy and Standard Error
+    '''
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=5, random_state=40)
+    for clf_name in classifiers:
+        # for repeat in tqdm(range(1,16)):
+            model = classifiers[clf_name]['best_estimators']
+            # scores = _evaluate_model(model, X_train, y_train)
+            scores = cross_val_score(model, X_train, y_train, scoring='f1_macro', cv=cv)
+            print(f"Accuracy {clf_name} - {np.mean(scores):0.3f} ({sem(scores)})")
+
+def _evaluate_model(model, X, y, repeats):
+    '''A Private function called to evaluate the passed model with
+    RepeatedStratified K-Fold CV using the repeats passed as argument.
+
+    Returns: scores
+    '''
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=repeats, random_state=40)
+    scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv)
+    return scores
