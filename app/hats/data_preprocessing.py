@@ -3,6 +3,7 @@ import numpy as np
 import re
 import os
 
+from .function import overload
 from .config import *
 
 class Preprocessing:
@@ -35,7 +36,8 @@ class Preprocessing:
     def langTranslate(self, line: str)-> str:
         # TODO: Future implementation if required
         pass
-
+    
+    @overload
     def preprocessing(self, dataset: pd.DataFrame)-> pd.DataFrame:
         # Converting to lowercase
         dataset['commands'] = dataset['commands'].apply(str.lower)
@@ -54,6 +56,14 @@ class Preprocessing:
         # Perform language translation
         # dataset['commands'] = dataset['commands'].apply(self.langTranslate)
         return dataset
+
+    @overload
+    def preprocessing(self, command: str)-> str:
+        command = command.lower()
+        command = self._removeStopWords(command)
+        command = self._smsTranslate(command)
+
+        return command
 
     def strpreprocessing(self, command: str)-> str:
         command = command.lower()
