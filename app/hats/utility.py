@@ -53,6 +53,9 @@ def shuffle_split(dataset: pd.DataFrame, label: str):
             np.asarray(y_train), np.asarray(y_test)
 
 def data_split_classwise(dataset: pd.DataFrame):
+    '''Split the data according to the OVR mechanism for 
+    per class training.
+    '''
     classList = dataset['label'].unique()
     for label in classList:
         X, y = dataset['sent_vec'], dataset[label]
@@ -63,6 +66,8 @@ def data_split_classwise(dataset: pd.DataFrame):
             np.asarray(y_train), np.asarray(y_test), label
 
 def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
+    '''Split the dataset into train and test sets.
+    '''
     X, y = dataset['sent_vec'], dataset['label']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, \
                 random_state=40, stratify=y)
@@ -70,6 +75,8 @@ def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
     return X_train, X_test, y_train, y_test
 
 def plot(modelHistory, titleName, filename: str):
+    '''Create a plot
+    '''
     fig = plt.figure(dpi=300)
     ax1 = fig.add_subplot(2,1,1)
     ax1.plot(modelHistory['loss'])
