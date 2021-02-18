@@ -20,8 +20,9 @@ def device_exists(command: str, ft_model) -> bool:
         top_nearest_words_to_devices[device] = []
         nearestWords = ft_model.get_nearest_neighbors(device, k=4)
         top_nearest_words_to_devices[device].extend([word for _, word in nearestWords])
+        top_nearest_words_to_devices[device].extend([device])
 
-    for word in command:
+    for word in command.split(' '):
         for device in _deviceList:
             if word in top_nearest_words_to_devices[device]:
                 return True
@@ -69,7 +70,7 @@ def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
     return X_train, X_test, y_train, y_test
 
 def plot(modelHistory, titleName, filename: str):
-    fig = plt.figure(figsize=(7, 5), dpi=300)
+    fig = plt.figure(dpi=300)
     ax1 = fig.add_subplot(2,1,1)
     ax1.plot(modelHistory['loss'])
     ax1.plot(modelHistory['val_loss'])
@@ -84,5 +85,6 @@ def plot(modelHistory, titleName, filename: str):
     ax2.legend(['train', 'validation'], loc='upper right')
     plt.gcf().subplots_adjust(bottom=0.25, left=0.25)
     # extent = full_extent().transformed(fig.dpi_scale_trans.inverted())
-    fig.savefig('..' + CONFIG.OUTPUT_DIRECTORY_NAME + \
+    fig.savefig('../' + CONFIG.OUTPUT_DIRECTORY_NAME + \
         CONFIG.PLOT_DIRECTORY_NAME + filename)
+    fig.show()
