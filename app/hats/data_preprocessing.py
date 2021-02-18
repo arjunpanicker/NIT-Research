@@ -23,10 +23,9 @@ class Preprocessing:
         return ' '.join(newline)
 
     def _smsTranslate(self, line: str)-> str:
-        newline = ''
-        for root_word, col in self.sms_translations_data.iteritems():
-            newline = ' '.join([word if word not in col else root_word for word in line.split()])
-
+        newline = line
+        for root_word, col in self.sms_translations_data.items():
+            newline = ' '.join([word if word not in col.tolist() else root_word for word in newline.split()])
         return newline 
 
     def _convertSentToVec(self, sentence: str, ftModel)-> np.ndarray:
