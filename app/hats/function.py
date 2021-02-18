@@ -34,7 +34,7 @@ class Function(object):
             self.fn.__class__,
             self.fn.__name__,
             len(args or []),
-            [type(arg) for arg in args],
+            # [type(arg) for arg in args],
         ])
 
 
@@ -52,7 +52,7 @@ class Namespace(object):
             raise Exception("Cannot instantiate a virtual namespace again!")
 
     @staticmethod
-    def get_instance(self, fn):
+    def get_instance():
         if Namespace.__instance is None:
             Namespace()
         return Namespace.__instance
