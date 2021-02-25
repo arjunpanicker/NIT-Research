@@ -2,7 +2,7 @@ class CONFIG:
     # Constant values
 
     ## ML Model Constants
-    THRESHOLD = 0.75
+    THRESHOLD = 0.70
 
     ## File names
     MODEL_SAVEFILE = 'ft_model.ftz'
@@ -23,6 +23,7 @@ class CONFIG:
     FT_DIMS = 150
 
     ## File Manager Constants
+    NN_OUTPUT_DIRECTORY_NAME = 'output/nn_models/'
     OUTPUT_DIRECTORY_NAME = 'output/'
     PLOT_DIRECTORY_NAME = 'plots/'
     DATASET_DIRECTORY = 'dataset/'

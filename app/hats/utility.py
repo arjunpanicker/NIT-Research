@@ -74,24 +74,45 @@ def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
     X_train, X_test = np.stack(X_train), np.stack(X_test)
     return X_train, X_test, y_train, y_test
 
-def plot(modelHistory, titleName, filename: str):
-    '''Create a plot
-    '''
-    fig = plt.figure(dpi=300)
-    ax1 = fig.add_subplot(2,1,1)
-    ax1.plot(modelHistory['loss'])
-    ax1.plot(modelHistory['val_loss'])
-    fig.suptitle(titleName)
-    ax1.set_ylabel('loss')
+def plot(models):
+    fig = plt.figure(figsize=(20, 60))
+    plot_count = 1
+    for m_name in models.keys():
+        history = models[m_name]['history'].history
+        plt.subplot(len(models.keys()), 2, plot_count)
+        plt.xlabel('epochs')
+        plt.grid()
+        plt.ylabel('loss')
+        plt.xticks(range(0, len(history['loss']) + 1, 2))
+        plt.plot(history['loss'])
+        plt.plot(history['val_loss'])
+        plt.title(map_label(m_name))
+        plt.legend(['Train Set', 'Validation Set'], loc='upper right')
+        plot_count += 1
 
-    ax2 = fig.add_subplot(2,1,2)
-    ax2.plot(modelHistory['accuracy'])
-    ax2.plot(modelHistory['val_accuracy'])
-    ax2.set_xlabel('epoch')
-    ax2.set_ylabel('accuracy')
-    ax2.legend(['train', 'validation'], loc='upper right')
-    plt.gcf().subplots_adjust(bottom=0.25, left=0.25)
-    # extent = full_extent().transformed(fig.dpi_scale_trans.inverted())
-    fig.savefig('../' + CONFIG.OUTPUT_DIRECTORY_NAME + \
-        CONFIG.PLOT_DIRECTORY_NAME + filename)
-    fig.show()
+        plt.subplot(len(models.keys()), 2, plot_count)
+        plt.xlabel('epochs')
+        plt.grid()
+        plt.ylabel('accuracy')
+        plt.xticks(range(0, len(history['accuracy']) + 1, 2))
+        plt.plot(history['accuracy'])
+        plt.plot(history['val_accuracy'])
+        plt.title(map_label(m_name))
+        plt.legend(['Train Set', 'Validation Set'], loc='lower right')
+        plot_count += 1
+
+def map_label(label:str)-> str:
+    label_map = {
+        '__label__light_off': 'light off',
+        '__label__light_on': 'light on',
+        '__label__geyser_on': 'geyser on',
+        '__label__geyser_off': 'geyser off',
+        '__label__fan_on': 'fan on',
+        '__label__fan_off': 'fan off',
+        '__label__tv_on': 'tv on',
+        '__label__tv_off': 'tv off',
+        '__label__ac_on': 'ac on',
+        '__label__ac_off': 'ac off'
+        }
+
+    return label_map[label]
