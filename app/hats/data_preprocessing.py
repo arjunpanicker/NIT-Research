@@ -3,6 +3,7 @@ import numpy as np
 import re
 import os
 
+# from .function import overload
 from .config import *
 
 class Preprocessing:
@@ -22,10 +23,9 @@ class Preprocessing:
         return ' '.join(newline)
 
     def _smsTranslate(self, line: str)-> str:
-        newline = ''
-        for root_word, col in self.sms_translations_data.iteritems():
-            newline = ' '.join([word if word not in col else root_word for word in line.split()])
-
+        newline = line
+        for root_word, col in self.sms_translations_data.items():
+            newline = ' '.join([word if word not in col.tolist() else root_word for word in newline.split()])
         return newline 
 
     def _convertSentToVec(self, sentence: str, ftModel)-> np.ndarray:
@@ -35,7 +35,8 @@ class Preprocessing:
     def langTranslate(self, line: str)-> str:
         # TODO: Future implementation if required
         pass
-
+    
+    # @overload
     def preprocessing(self, dataset: pd.DataFrame)-> pd.DataFrame:
         # Converting to lowercase
         dataset['commands'] = dataset['commands'].apply(str.lower)
@@ -54,6 +55,14 @@ class Preprocessing:
         # Perform language translation
         # dataset['commands'] = dataset['commands'].apply(self.langTranslate)
         return dataset
+
+    # @overload
+    # def preprocessing(self, command: str)-> str:
+    #     command = command.lower()
+    #     command = self._removeStopWords(command)
+    #     command = self._smsTranslate(command)
+
+    #     return command
 
     def strpreprocessing(self, command: str)-> str:
         command = command.lower()
