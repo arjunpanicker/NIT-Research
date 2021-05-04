@@ -2,7 +2,7 @@ class CONFIG:
     # Constant values
 
     ## ML Model Constants
-    THRESHOLD = 0.70
+    THRESHOLD = 0.60
 
     ## File names
     MODEL_SAVEFILE = 'ft_model.ftz'

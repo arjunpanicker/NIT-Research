@@ -65,41 +65,55 @@ def data_split_classwise(dataset: pd.DataFrame):
         yield np.asarray(X_train), np.asarray(X_test), \
             np.asarray(y_train), np.asarray(y_test), label
 
-def data_split(dataset: pd.DataFrame, test_size: float = 0.2):
+def data_split(dataset: pd.DataFrame, test_size: float = 0.25):
     '''Split the dataset into train and test sets.
     '''
     X, y = dataset['sent_vec'], dataset['label']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, \
                 random_state=40, stratify=y)
-    X_train, X_test = np.stack(X_train), np.stack(X_test)
-    return X_train, X_test, y_train, y_test
+    train_df, test_df = pd.DataFrame(X_train), pd.DataFrame(X_test)
+    train_df['y'], test_df['y'] = y_train, y_test
+    return train_df, test_df
 
 def plot(models):
     fig = plt.figure(figsize=(20, 60))
     plot_count = 1
     for m_name in models.keys():
         history = models[m_name]['history'].history
-        plt.subplot(len(models.keys()), 2, plot_count)
+        plt.subplot(len(models.keys()), 3, plot_count)
         plt.xlabel('epochs')
         plt.grid()
         plt.ylabel('loss')
-        plt.xticks(range(0, len(history['loss']) + 1, 2))
+        plt.xticks(range(0, len(history['loss']) + 1, 5))
         plt.plot(history['loss'])
         plt.plot(history['val_loss'])
         plt.title(map_label(m_name))
         plt.legend(['Train Set', 'Validation Set'], loc='upper right')
         plot_count += 1
+        
+        plt.subplot(len(models.keys()), 3, plot_count)
+        plt.xlabel('epochs')
+        plt.grid()
+        plt.ylabel('F1 Score')
+        plt.xticks(range(0, len(history['_f1_score']) + 1, 5))
+        plt.plot(history['_f1_score'])
+        plt.plot(history['val__f1_score'])
+        plt.title(map_label(m_name))
+        plt.legend(['Train Set', 'Validation Set'], loc='lower right')
+        plot_count += 1
 
-        plt.subplot(len(models.keys()), 2, plot_count)
+        plt.subplot(len(models.keys()), 3, plot_count)
         plt.xlabel('epochs')
         plt.grid()
         plt.ylabel('accuracy')
-        plt.xticks(range(0, len(history['accuracy']) + 1, 2))
+        plt.xticks(range(0, len(history['accuracy']) + 1, 5))
         plt.plot(history['accuracy'])
         plt.plot(history['val_accuracy'])
         plt.title(map_label(m_name))
         plt.legend(['Train Set', 'Validation Set'], loc='lower right')
         plot_count += 1
+
+    return fig
 
 def map_label(label:str)-> str:
     label_map = {
@@ -112,7 +126,8 @@ def map_label(label:str)-> str:
         '__label__tv_on': 'tv on',
         '__label__tv_off': 'tv off',
         '__label__ac_on': 'ac on',
-        '__label__ac_off': 'ac off'
+        '__label__ac_off': 'ac off',
+        'Other': 'other'
         }
 
     return label_map[label]
